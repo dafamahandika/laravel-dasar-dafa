@@ -8,7 +8,7 @@
 </head>
 <body>
      <h1>Activity</h1>
-     <form action="{{route('updateActivity'), $data->id}}" method="post">
+     <form action="{{ route('updateActivity', $data->id) }}" method="post">
           @csrf
           <label>
                Activity
