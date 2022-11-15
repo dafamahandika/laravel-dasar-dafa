@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Hello</title>
+    <title>Menampilkan Hello world!</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+
+    </style>
 </head>
+
 <body>
-     <h1>Hello I'm Dafa Mahandika</h1>
-     <button><a href="{{route('indexActivity')}}"> Create Activity</a></button>
-     <br>
-     <br>
-     <table border="2">
-          <tr>
-               <th>No</th>
-               <th>Id</th>
-               <th>Nama Activity</th>
-               <th>Action</th>
-          </tr>
-          <?php
-          $i = 1;
-          ?>
-          
-          @foreach ($data as $datas)
-          <tr>
-               <td>{{ $i++ }}</td>
-               <td>{{ $datas->id }}</td>
-               <td>{{ $datas->nama_activity }}</td>
-               <td>
-                    <a href="">Edit</a>
-                    <a href="">Hapus</a>
-               </td>
-          </tr>
-          @endforeach
-     </table>
-     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <h2 style="text-align: center;">{{ $message }}</h2>
-        </div>
-    @endif  
+    @if ($message = Session::get('success'))
+    <div>
+        <p>{{$message}}</p>
+    </div>
+    @endif
+
+    <p>Hello World!</p>
+    <a href="{{route('about')}}">About</a>
+    <a href="{{route('indexActivity')}}">Activity</a><br><br>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Id</th>
+            <th>Nama Activity</th>
+            <th>Action</th>
+        </tr>
+        <?php $i = 1; ?>
+        @foreach($data as $dt)
+        <tr>
+          <td>{{$i++}}</td>
+          <td>{{$dt->id}}</td>
+          <td>{{$dt->nama_activity}}</td>
+          <td>
+            <a href="{{route('indexEditActivity', $dt->id)}}">edit</a>
+          </td>
+        </tr>
+        @endforeach
+    </table>
 </body>
+
 </html>

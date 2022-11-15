@@ -9,8 +9,7 @@ class HelloController extends Controller
 {
     public function index() {
         $data = Activity::get();
-        return view('coba.hello')
-        -> with('data', $data);
+        return view('coba.hello', compact('data'));
     }
      public function getAbout(){
         return view('coba.about');
@@ -30,6 +29,20 @@ class HelloController extends Controller
         ->with('success', 'Activity Berhasil Di Simpan');
     }
 
+    public function indexEditActivity($id){
+        // $data = Activity::get();
+        //dd($data);
+        $data = Activity::where('id',$id)->first();
+        return view ('coba.edit_data')
+        ->with('data',$data);
 
+    }
     
+    public function updateActivity(Request $request, $id){
+        Activity::where('id',$id)->update([
+            'nama_activity' => $request->nama_activity
+        ]);
+
+        return redirect(route('index'));
+     }
 }
