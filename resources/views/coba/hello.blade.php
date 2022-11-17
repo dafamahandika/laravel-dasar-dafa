@@ -38,7 +38,11 @@
           <td>{{$dt->id}}</td>
           <td>{{$dt->nama_activity}}</td>
           <td>
-            <a href="{{route('indexEditActivity', $dt->id)}}">edit</a>
+            <form action="{{ route('deleteActivity', $dt->id) }}" method="POST">
+                <a href="{{route('indexEditActivity', $dt->id) }}"><button>edit</button></a>
+                <button type="submit">delete</button>
+                @csrf
+            </form>
           </td>
         </tr>
         @endforeach

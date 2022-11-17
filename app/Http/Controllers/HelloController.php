@@ -37,12 +37,20 @@ class HelloController extends Controller
         ->with('data',$data);
 
     }
-    
+
     public function updateActivity(Request $request, $id){
         Activity::where('id',$id)->update([
             'nama_activity' => $request->nama_activity
         ]);
 
-        return redirect(route('index'));
+        return redirect(route('index'))
+        ->with('success', 'Edit Successfully!');
+     }
+
+     public function deleteActivity($id){
+        Activity::where('id', $id)->delete();
+
+        return redirect(route('index'))
+        ->with('success', 'Delete Successfully!');
      }
 }

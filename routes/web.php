@@ -24,5 +24,6 @@ Route::get('/about',[HelloController::class, 'getAbout' ]) -> name('about');
 Route::get('/indexActivity',[HelloController::class, 'indexActivity' ]) -> name('indexActivity');
 Route::post('/storeActivity',[HelloController::class, 'storeActivity' ]) -> name('storeActivity');
 
-Route::get('/indexEditActivity/{d}',[HelloController::class, 'indexEditActivity' ]) -> name('indexEditActivity');
+Route::get('/indexEditActivity/{id}',[HelloController::class, 'indexEditActivity' ]) -> name('indexEditActivity');
 Route::post('/updateActivity/{id}',[HelloController::class, 'updateActivity' ]) -> name('updateActivity');
+Route::post('/deleteActivity/{id}',[HelloController::class, 'deleteActivity' ]) -> name('deleteActivity');
