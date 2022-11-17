@@ -33,16 +33,12 @@
         </tr>
         <?php $i = 1; ?>
         @foreach($data as $dt)
-        <tr>
+        <tr>  
           <td>{{$i++}}</td>
           <td>{{$dt->id}}</td>
           <td>{{$dt->nama_activity}}</td>
           <td>
-            <form action="{{ route('deleteActivity', $dt->id) }}" method="POST">
-                <a href="{{route('indexEditActivity', $dt->id) }}"><button>edit</button></a>
-                <button type="submit">delete</button>
-                @csrf
-            </form>
+            <a href="{{route('indexEditActivity', $dt->id) }}"><button>edit</button></a>
           </td>
         </tr>
         @endforeach
