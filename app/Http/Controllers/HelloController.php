@@ -11,11 +11,7 @@ class HelloController extends Controller
         $data = Activity::get();
         return view('coba.hello', compact('data'));
     }
-     public function getAbout(){
-        return view('coba.about');
-    }
-
-    public function indexActivity() {
+        public function indexActivity() {
         return view('coba.activity');
     }
 
@@ -26,7 +22,7 @@ class HelloController extends Controller
         Activity::create($request->all());
 
         return redirect()->route('index')
-        ->with('success', 'Activity Berhasil Di Simpan');
+        ->with('success', 'Add Successfully !');
     }
 
     public function indexEditActivity($id){
@@ -44,13 +40,13 @@ class HelloController extends Controller
         ]);
 
         return redirect(route('index'))
-        ->with('success', 'Edit Successfully!');
+        ->with('edit', 'Edit Successfully!');
      }
 
-     public function deleteActivity($id){
-        Activity::where('id', $id)->delete();
-
+    public function deleteActivity($id) {
+        Activity::where('id',$id)->delete();
+        
         return redirect(route('index'))
-        ->with('success', 'Delete Successfully!');
-     }
+        ->with('delete', 'Delete Successfully !');
+    }
 }
