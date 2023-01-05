@@ -15,7 +15,7 @@ class RegisterController extends Controller
         $credentials = $request->validate([
             'name' => ['required'],
             'email' => ['required', 'email'],
-            'password' => ['required'],
+            'password' => ['required',],
 
         ]);
 
@@ -23,7 +23,7 @@ class RegisterController extends Controller
         
         User::create($credentials);
 
-        return redirect('/register')
+        return redirect('/login')
         -> with('success', 'Register Berhasil, Silahkan Login !');
     }
 }

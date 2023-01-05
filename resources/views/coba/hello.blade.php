@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Activity
+                        <h4>Activity {{ auth()->user()->name }}
                             <a href="{{route('indexActivity')}}" class="btn btn-success float-end">Tambah Activity</a>
                         </h4>
                         
@@ -61,4 +61,5 @@
                 </div>
             </div>
         </div>
+    </div>
     @endsection

@@ -3,7 +3,7 @@
      <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="container">
-                    <main class="form">
+                    <main class="form input">
                         <form action="{{route('storeActivity')}}" method="POST">
                            @csrf
                             <h1 class="h3 mb-3 fw-normal">Add Activity</h1>

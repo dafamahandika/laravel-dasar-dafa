@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CRUD Sederhana</title>
+    <link rel="stylesheet" href="css/input.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   </head>
   <body>
@@ -19,10 +20,16 @@
                               <a class="nav-link text-light" href="{{route('index')}}">Home</a>
                          </li>
                          <li class="nav-item">
+                              <a class="nav-link text-light" href="/landing">Landing</a>
+                         </li>
+                         <li class="nav-item">
                               <a class="nav-link text-light" href="{{route('indexActivity')}}">Add</a>
                           </li>
                          <li class="nav-item">
                               <a class="nav-link text-light" href="{{route('register')}}">Register</a>
+                          </li>
+                         <li class="nav-item">
+                              <a class="btn btn-secondary nav-link text-light" href="{{route('logout')}}">Logout</a>
                           </li>
                     </ul>
                </div>

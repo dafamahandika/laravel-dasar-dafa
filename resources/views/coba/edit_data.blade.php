@@ -10,7 +10,7 @@
                     </div>
                 @endif -->
                 <div class="container">
-                    <main class="form">
+                    <main class="form input">
                         <form action="{{ route('updateActivity', $data->id) }}" method="POST">
                            @csrf
                             <h1 class="h3 mb-3 fw-normal">Add Activity</h1>

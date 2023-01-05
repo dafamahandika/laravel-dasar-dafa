@@ -10,7 +10,7 @@
                     </div>
                 @endif
                 <div class="container">
-                    <main class="form-register">
+                    <main class="form-register input">
                         <form action="{{ route('registerstore')}}" method="POST">
                            @csrf
                             <h1 class="h3 mb-3 fw-normal">Register</h1>

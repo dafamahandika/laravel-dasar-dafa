@@ -9,8 +9,17 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                
+                {{-- Jika kita berhasil melakukan registrasi alert ini akan muncul , alert ini diatur didalam RegisterController --}}
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session ('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                
                 <div class="container">
-                    <main class="form-register">
+                    <main class="form-login input">
                         <form action="{{ route ('auth') }}" method="POST">
                            @csrf
                             <h1 class="h3 mb-3 fw-normal">Login</h1>
